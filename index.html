@@ -1,12 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicholas Ridgway</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Shed</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #17120d;
+      color: #e8dcc7;
+      font-family: Georgia, serif;
+    }
+
+    .page {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 30px;
+    }
+
+    header {
+      background: #0d0b08;
+      border: 2px solid #3b2a1a;
+      padding: 25px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 64px;
+      margin: 0;
+      letter-spacing: 3px;
+    }
+
+    .tagline {
+      font-size: 20px;
+      color: #c9b99a;
+      margin-top: 10px;
+    }
+
+    section {
+      background: #24180f;
+      border: 1px solid #4b3420;
+      padding: 25px;
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      margin-top: 0;
+      letter-spacing: 2px;
+    }
+
+    .item {
+      background: #d8c7a8;
+      color: #1b130c;
+      padding: 15px;
+      margin: 12px 0;
+      border: 1px solid #8c7555;
+    }
+
+    .item h3 {
+      margin: 0 0 5px 0;
+    }
+
+    .item p {
+      margin: 0;
+    }
+
+    .boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+    }
+
+    .box {
+      background: #3a2617;
+      border: 1px solid #6b4b2e;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer {
+      color: #9f8f73;
+      font-size: 14px;
+      margin-top: 40px;
+      text-align: center;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Hello!</h1>
-    <p>Welcome to nicholasridgway.com</p>
+  <div class="page">
+
+    <header>
+      <h1>THE SHED</h1>
+      <div class="tagline">Bits and pieces collected from around the internet and elsewhere.</div>
+    </header>
+
+    <section>
+      <h2>The Workbench</h2>
+
+      <div class="item">
+        <h3>Building The Shed</h3>
+        <p>Designing and building this little corner of the internet.</p>
+      </div>
+
+      <div class="item">
+        <h3>Learning Logic Pro</h3>
+        <p>Slowly getting to grips with recording and production.</p>
+      </div>
+
+      <div class="item">
+        <h3>CWC Watch Research</h3>
+        <p>Digging into old military watch history and models.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Boxes & Drawers</h2>
+
+      <div class="boxes">
+        <div class="box">Records</div>
+        <div class="box">Watches</div>
+        <div class="box">Camping Gear</div>
+        <div class="box">Photographs</div>
+        <div class="box">Projects</div>
+        <div class="box">Miscellaneous</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Latest Finds</h2>
+
+      <div class="item">
+        <h3>Old BB Gun</h3>
+        <p>Something found, remembered, or worth keeping.</p>
+      </div>
+
+      <div class="item">
+        <h3>Radiohead — Weird Fishes</h3>
+        <p>A song that keeps coming back.</p>
+      </div>
+    </section>
+
+    <footer>
+      No ads. No algorithms. No following. Just a shed.
+    </footer>
+
+  </div>
 </body>
 </html>
