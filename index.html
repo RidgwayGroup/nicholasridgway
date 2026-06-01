@@ -55,6 +55,7 @@
       letter-spacing: 3px;
       color: #d4a574;
       transition: color 0.3s ease;
+      cursor: pointer;
     }
 
     .logo-link:hover {
@@ -68,7 +69,9 @@
       flex: 1;
     }
 
-    nav a {
+    nav button {
+      background: none;
+      border: none;
       text-decoration: none;
       color: #b8956a;
       font-size: 13px;
@@ -77,9 +80,11 @@
       transition: color 0.3s ease;
       border-bottom: 1px solid transparent;
       padding-bottom: 3px;
+      cursor: pointer;
+      font: inherit;
     }
 
-    nav a:hover {
+    nav button:hover {
       color: #d4a574;
       border-bottom-color: #d4a574;
     }
@@ -117,10 +122,20 @@
       padding: 32px 20px;
       display: none;
       box-shadow: -4px 0 12px rgba(0, 0, 0, 0.3);
+      z-index: 900;
     }
 
     .sidebar.active {
       display: block;
+    }
+
+    .sidebar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(139, 101, 58, 0.4);
     }
 
     .sidebar-title {
@@ -128,9 +143,21 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       color: #b8956a;
-      margin: 0 0 20px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid rgba(139, 101, 58, 0.4);
+      margin: 0;
+    }
+
+    .sidebar-controls button {
+      background: none;
+      border: none;
+      color: #b8956a;
+      cursor: pointer;
+      font-size: 12px;
+      padding: 4px 8px;
+      transition: color 0.3s ease;
+    }
+
+    .sidebar-controls button:hover {
+      color: #d4a574;
     }
 
     .sidebar-list {
@@ -150,10 +177,30 @@
       transition: color 0.3s ease;
       display: block;
       padding: 6px 8px;
+      cursor: pointer;
     }
 
     .sidebar-item a:hover {
       color: #d4a574;
+    }
+
+    .sidebar-add-button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background: rgba(139, 101, 58, 0.3);
+      border: 1px solid rgba(139, 101, 58, 0.5);
+      color: #d4a574;
+      cursor: pointer;
+      font-family: Georgia, serif;
+      font-size: 13px;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar-add-button:hover {
+      background: rgba(139, 101, 58, 0.5);
+      border-color: rgba(212, 165, 116, 0.6);
     }
 
     /* TYPOGRAPHY */
@@ -191,6 +238,7 @@
       text-decoration: none;
       border-bottom: 1px dotted rgba(212, 165, 116, 0.5);
       transition: all 0.3s ease;
+      cursor: pointer;
     }
 
     a:hover {
@@ -299,6 +347,177 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
 
+    /* FORMS */
+    .form-container {
+      background: rgba(22, 14, 8, 0.72);
+      border: 1px solid rgba(139, 101, 58, 0.5);
+      border-radius: 3px;
+      padding: 32px;
+      margin-bottom: 60px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(212, 165, 116, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #d4a574;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      background: rgba(139, 101, 58, 0.15);
+      border: 1px solid rgba(139, 101, 58, 0.4);
+      color: #d4a574;
+      font-family: Georgia, serif;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    textarea:focus {
+      outline: none;
+      background: rgba(139, 101, 58, 0.25);
+      border-color: rgba(212, 165, 116, 0.6);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    button {
+      padding: 12px 24px;
+      background: rgba(139, 101, 58, 0.3);
+      border: 1px solid rgba(139, 101, 58, 0.5);
+      color: #d4a574;
+      cursor: pointer;
+      font-family: Georgia, serif;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: rgba(139, 101, 58, 0.5);
+      border-color: rgba(212, 165, 116, 0.6);
+    }
+
+    button.destructive {
+      background: rgba(139, 80, 80, 0.3);
+      border-color: rgba(180, 100, 100, 0.5);
+      color: #d9a0a0;
+    }
+
+    button.destructive:hover {
+      background: rgba(139, 80, 80, 0.5);
+      border-color: rgba(200, 120, 120, 0.6);
+    }
+
+    /* ITEM VIEW */
+    .item-view {
+      background: rgba(22, 14, 8, 0.72);
+      border: 1px solid rgba(139, 101, 58, 0.5);
+      border-radius: 3px;
+      padding: 32px;
+      margin-bottom: 60px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(212, 165, 116, 0.1);
+    }
+
+    .item-meta {
+      font-size: 12px;
+      color: #8b6b4a;
+      margin-bottom: 24px;
+    }
+
+    .item-content {
+      margin-bottom: 32px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .item-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    /* ITEM LIST */
+    .item-list {
+      margin-bottom: 60px;
+    }
+
+    .item-list-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .item-card {
+      background: rgba(22, 14, 8, 0.68);
+      border: 1px solid rgba(139, 101, 58, 0.5);
+      border-radius: 3px;
+      padding: 24px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(212, 165, 116, 0.08);
+    }
+
+    .item-card:hover {
+      background: rgba(100, 70, 40, 0.5);
+      border-color: rgba(212, 165, 116, 0.6);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .item-card-title {
+      font-size: 18px;
+      color: #d4a574;
+      margin: 0 0 12px;
+      font-weight: normal;
+    }
+
+    .item-card-date {
+      font-size: 12px;
+      color: #8b6b4a;
+      margin: 0;
+    }
+
+    .breadcrumb {
+      margin-bottom: 32px;
+      font-size: 13px;
+      color: #b8956a;
+    }
+
+    .breadcrumb a {
+      cursor: pointer;
+    }
+
+    /* HIDE/SHOW */
+    .hidden {
+      display: none;
+    }
+
     /* FOOTER */
     footer {
       text-align: center;
@@ -320,7 +539,7 @@
         gap: 24px;
       }
 
-      nav a {
+      nav button {
         font-size: 12px;
       }
     }
@@ -340,7 +559,7 @@
         gap: 16px;
       }
 
-      nav a {
+      nav button {
         font-size: 11px;
         letter-spacing: 1px;
       }
@@ -403,7 +622,7 @@
         justify-content: flex-start;
       }
 
-      nav a {
+      nav button {
         font-size: 10px;
         letter-spacing: 0.5px;
       }
@@ -438,6 +657,14 @@
         padding: 16px;
         font-size: 14px;
       }
+
+      .form-buttons {
+        flex-direction: column;
+      }
+
+      button {
+        width: 100%;
+      }
     }
 
     /* SCROLLBAR STYLING */
@@ -462,61 +689,25 @@
 
 <body>
   <header>
-    <a href="/" class="logo-link">THE SHED</a>
+    <a class="logo-link" onclick="app.showWorkbench()">THE SHED</a>
     <nav>
-      <a href="#about">What's This?</a>
-      <a href="#contact">Contact</a>
+      <button onclick="app.showAddBoxForm()">+ New Box</button>
     </nav>
   </header>
 
-  <div class="page-wrapper">
-    <main>
-      <section class="welcome">
-        <h1>Welcome</h1>
-        <p>Inside you'll find articles, notes, experiments, observations, projects, photographs, and whatever else happens to be occupying my attention at the time.</p>
-        <p>There is no content strategy. No algorithms. No endless feeds. Just a collection of things I find interesting.</p>
-      </section>
-
-      <section class="workbench">
-        <h2>Current Things On The Bench</h2>
-        <div class="projects-grid">
-          <a href="#" class="project-card">
-            <h3 class="project-title">Building The Shed</h3>
-            <p class="project-description">Designing and building this little corner of the internet.</p>
-          </a>
-          <a href="#" class="project-card">
-            <h3 class="project-title">Learning Logic Pro</h3>
-            <p class="project-description">Slowly getting to grips with recording and production.</p>
-          </a>
-          <a href="#" class="project-card">
-            <h3 class="project-title">Watch Research</h3>
-            <p class="project-description">Digging into military watch history and mechanics.</p>
-          </a>
-        </div>
-      </section>
-
-      <section class="categories">
-        <h2>Boxes &amp; Drawers</h2>
-        <div class="category-grid">
-          <a href="music.html" class="category-button" data-category="music">Music</a>
-          <a href="watches.html" class="category-button" data-category="watches">Watches</a>
-          <a href="technology.html" class="category-button" data-category="technology">Technology</a>
-          <a href="photography.html" class="category-button" data-category="photography">Photography</a>
-          <a href="projects.html" class="category-button" data-category="projects">Projects</a>
-          <a href="notes.html" class="category-button" data-category="notes">Notes</a>
-          <a href="collections.html" class="category-button" data-category="collections">Collections</a>
-          <a href="miscellaneous.html" class="category-button" data-category="miscellaneous">Miscellaneous</a>
-        </div>
-      </section>
+  <div class="page-wrapper" id="pageWrapper">
+    <main id="mainStage">
+      <!-- Dynamic content inserted here -->
     </main>
 
     <aside class="sidebar" id="sidebar">
-      <h3 class="sidebar-title" id="sidebar-title">Category</h3>
-      <ul class="sidebar-list" id="sidebar-content">
-        <li class="sidebar-item"><a href="#">Item 1</a></li>
-        <li class="sidebar-item"><a href="#">Item 2</a></li>
-        <li class="sidebar-item"><a href="#">Item 3</a></li>
+      <div class="sidebar-header">
+        <h3 class="sidebar-title">Boxes &amp; Drawers</h3>
+      </div>
+      <ul class="sidebar-list" id="boxesList">
+        <!-- Boxes listed here -->
       </ul>
+      <button class="sidebar-add-button" onclick="app.showAddBoxForm()">+ Add Box</button>
     </aside>
   </div>
 
@@ -525,62 +716,472 @@
   </footer>
 
   <script>
-    // Sidebar interaction for categories
-    document.querySelectorAll('.category-button').forEach(button => {
-      button.addEventListener('click', function(e) {
-        e.preventDefault();
-        const category = this.dataset.category;
-        const sidebar = document.getElementById('sidebar');
-        const pageWrapper = document.querySelector('.page-wrapper');
-        const sidebarTitle = document.getElementById('sidebar-title');
-        const sidebarContent = document.getElementById('sidebar-content');
+    const app = {
+      data: {
+        boxes: []
+      },
+      currentView: 'workbench',
+      currentBox: null,
+      currentItem: null,
 
-        // Sample content for each category
-        const categoryContent = {
-          music: {
-            title: 'Music',
-            items: ['Radiohead', 'The Streets', 'Favourite Albums', 'Vinyl Collection', 'Concert Notes']
-          },
-          watches: {
-            title: 'Watches',
-            items: ['Hamilton Khaki', 'Seiko Prospex', 'Watch Repairs', 'Collecting Notes', 'Mechanics']
-          },
-          technology: {
-            title: 'Technology',
-            items: ['Home Lab', 'VPN Notes', 'Networking', 'Linux', 'Web Projects']
-          },
-          photography: {
-            title: 'Photography',
-            items: ['Landscapes', 'Street Photography', 'Technical Notes', 'Equipment', 'Archives']
-          },
-          projects: {
-            title: 'Projects',
-            items: ['Building The Shed', 'Side Projects', 'Experiments', 'Prototypes', 'Ideas']
-          },
-          notes: {
-            title: 'Notes',
-            items: ['Thoughts', 'Learning', 'Observations', 'Research', 'Drafts']
-          },
-          collections: {
-            title: 'Collections',
-            items: ['Books', 'Films', 'Games', 'Gear', 'Archives']
-          },
-          miscellaneous: {
-            title: 'Miscellaneous',
-            items: ['Random Finds', 'Interesting Links', 'Bookmarks', 'To Explore', 'Curiosities']
-          }
-        };
-
-        if (categoryContent[category]) {
-          const content = categoryContent[category];
-          sidebarTitle.textContent = content.title;
-          sidebarContent.innerHTML = content.items.map(item => 
-            `<li class="sidebar-item"><a href="#">${item}</a></li>`
-          ).join('');
-          sidebar.classList.add('active');
-          pageWrapper.classList.add('sidebar-visible');
+      // Initialize app
+      init() {
+        this.loadData();
+        if (this.data.boxes.length === 0) {
+          this.createStarterData();
         }
-      });
+        this.showWorkbench();
+        this.renderSidebar();
+      },
+
+      // Data Management
+      loadData() {
+        const saved = localStorage.getItem('theShedData');
+        if (saved) {
+          this.data = JSON.parse(saved);
+        }
+      },
+
+      saveData() {
+        localStorage.setItem('theShedData', JSON.stringify(this.data));
+      },
+
+      createStarterData() {
+        this.data.boxes = [
+          {
+            id: this.generateId(),
+            name: 'Music',
+            items: [
+              {
+                id: this.generateId(),
+                title: 'Radiohead Notes',
+                content: 'Exploring the evolution of Radiohead from OK Computer to the present day.',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+              },
+              {
+                id: this.generateId(),
+                title: 'Vinyl Collection',
+                content: 'Recently acquired: The Streets - Original Pirate Material on original pressing.',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+              }
+            ]
+          },
+          {
+            id: this.generateId(),
+            name: 'Watches',
+            items: [
+              {
+                id: this.generateId(),
+                title: 'Hamilton Khaki Field Watch',
+                content: 'Military-grade quartz watch. Reliable, rugged, and understated. Perfect everyday watch.',
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+              }
+            ]
+          },
+          {
+            id: this.generateId(),
+            name: 'Technology',
+            items: []
+          }
+        ];
+        this.saveData();
+      },
+
+      generateId() {
+        return Date.now().toString(36) + Math.random().toString(36).substr(2);
+      },
+
+      // UI Rendering
+      showWorkbench() {
+        this.currentView = 'workbench';
+        this.currentBox = null;
+        this.currentItem = null;
+        this.hideSidebar();
+        
+        const recentItems = this.getRecentItems(6);
+        let html = `
+          <section class="welcome">
+            <h1>Welcome</h1>
+            <p>Inside you'll find articles, notes, experiments, observations, projects, photographs, and whatever else happens to be occupying my attention at the time.</p>
+            <p>There is no content strategy. No algorithms. No endless feeds. Just a collection of things I find interesting.</p>
+          </section>
+        `;
+
+        if (recentItems.length > 0) {
+          html += `
+            <section class="workbench">
+              <h2>Recent Things On The Bench</h2>
+              <div class="projects-grid">
+                ${recentItems.map(item => `
+                  <a onclick="app.showItem('${item.boxId}', '${item.id}')" class="project-card">
+                    <h3 class="project-title">${this.escapeHtml(item.title)}</h3>
+                    <p class="project-description">${this.escapeHtml(item.content.substring(0, 60))}${item.content.length > 60 ? '...' : ''}</p>
+                  </a>
+                `).join('')}
+              </div>
+            </section>
+          `;
+        }
+
+        html += `
+          <section class="categories">
+            <h2>Boxes &amp; Drawers</h2>
+            <div class="category-grid">
+              ${this.data.boxes.map(box => `
+                <a onclick="app.showBoxItems('${box.id}')" class="category-button">
+                  ${this.escapeHtml(box.name)}
+                </a>
+              `).join('')}
+            </div>
+          </section>
+        `;
+
+        document.getElementById('mainStage').innerHTML = html;
+      },
+
+      showBoxItems(boxId) {
+        const box = this.data.boxes.find(b => b.id === boxId);
+        if (!box) return;
+
+        this.currentView = 'itemList';
+        this.currentBox = box;
+        this.currentItem = null;
+        this.showSidebar();
+
+        let html = `
+          <div class="breadcrumb">
+            <a onclick="app.showWorkbench()">Workbench</a> / ${this.escapeHtml(box.name)}
+          </div>
+          <div class="item-list">
+            <div class="item-list-header">
+              <h2>${this.escapeHtml(box.name)}</h2>
+              <button onclick="app.showAddItemForm('${box.id}')">+ Add Item</button>
+            </div>
+        `;
+
+        if (box.items.length === 0) {
+          html += `<p>No items yet. <a onclick="app.showAddItemForm('${box.id}')">Add one</a>.</p>`;
+        } else {
+          html += `
+            <div class="items-grid">
+              ${box.items.map(item => `
+                <a onclick="app.showItem('${box.id}', '${item.id}')" class="item-card">
+                  <h3 class="item-card-title">${this.escapeHtml(item.title)}</h3>
+                  <p class="item-card-date">${new Date(item.updatedAt).toLocaleDateString()}</p>
+                </a>
+              `).join('')}
+            </div>
+          `;
+        }
+
+        html += `</div>`;
+        document.getElementById('mainStage').innerHTML = html;
+      },
+
+      showItem(boxId, itemId) {
+        const box = this.data.boxes.find(b => b.id === boxId);
+        if (!box) return;
+        
+        const item = box.items.find(i => i.id === itemId);
+        if (!item) return;
+
+        this.currentView = 'item';
+        this.currentBox = box;
+        this.currentItem = item;
+        this.showSidebar();
+
+        const createdDate = new Date(item.createdAt).toLocaleString();
+        const updatedDate = new Date(item.updatedAt).toLocaleString();
+
+        let html = `
+          <div class="breadcrumb">
+            <a onclick="app.showWorkbench()">Workbench</a> / 
+            <a onclick="app.showBoxItems('${box.id}')">${this.escapeHtml(box.name)}</a> / 
+            ${this.escapeHtml(item.title)}
+          </div>
+          <div class="item-view">
+            <h2>${this.escapeHtml(item.title)}</h2>
+            <div class="item-meta">
+              Created: ${createdDate}<br>
+              Last updated: ${updatedDate}
+            </div>
+            <div class="item-content">${this.escapeHtml(item.content)}</div>
+            <div class="item-actions">
+              <button onclick="app.showEditItemForm('${box.id}', '${item.id}')">Edit</button>
+              <button onclick="app.deleteItem('${box.id}', '${item.id}')" class="destructive">Delete</button>
+            </div>
+          </div>
+        `;
+        document.getElementById('mainStage').innerHTML = html;
+      },
+
+      showAddBoxForm() {
+        this.currentView = 'addBox';
+        this.hideSidebar();
+
+        let html = `
+          <h2>Create a New Box</h2>
+          <div class="form-container">
+            <div class="form-group">
+              <label for="boxName">Box Name</label>
+              <input type="text" id="boxName" placeholder="e.g., Music, Watches, Notes...">
+            </div>
+            <div class="form-buttons">
+              <button onclick="app.submitAddBox()">Create Box</button>
+              <button onclick="app.showWorkbench()">Cancel</button>
+            </div>
+          </div>
+        `;
+        document.getElementById('mainStage').innerHTML = html;
+        document.getElementById('boxName').focus();
+      },
+
+      submitAddBox() {
+        const name = document.getElementById('boxName').value.trim();
+        if (!name) {
+          alert('Please enter a box name');
+          return;
+        }
+
+        this.data.boxes.push({
+          id: this.generateId(),
+          name: name,
+          items: []
+        });
+        this.saveData();
+        this.renderSidebar();
+        this.showWorkbench();
+      },
+
+      showEditBoxForm(boxId) {
+        const box = this.data.boxes.find(b => b.id === boxId);
+        if (!box) return;
+
+        this.currentView = 'editBox';
+        this.hideSidebar();
+
+        let html = `
+          <h2>Edit Box</h2>
+          <div class="form-container">
+            <div class="form-group">
+              <label for="boxName">Box Name</label>
+              <input type="text" id="boxName" value="${this.escapeHtml(box.name)}">
+            </div>
+            <div class="form-buttons">
+              <button onclick="app.submitEditBox('${box.id}')">Save</button>
+              <button onclick="app.showBoxItems('${box.id}')">Cancel</button>
+            </div>
+          </div>
+        `;
+        document.getElementById('mainStage').innerHTML = html;
+        document.getElementById('boxName').focus();
+      },
+
+      submitEditBox(boxId) {
+        const name = document.getElementById('boxName').value.trim();
+        if (!name) {
+          alert('Please enter a box name');
+          return;
+        }
+
+        const box = this.data.boxes.find(b => b.id === boxId);
+        if (box) {
+          box.name = name;
+          this.saveData();
+          this.renderSidebar();
+          this.showBoxItems(boxId);
+        }
+      },
+
+      deleteBox(boxId) {
+        if (!confirm('Delete this entire box and all its items?')) return;
+
+        this.data.boxes = this.data.boxes.filter(b => b.id !== boxId);
+        this.saveData();
+        this.renderSidebar();
+        this.showWorkbench();
+      },
+
+      showAddItemForm(boxId) {
+        const box = this.data.boxes.find(b => b.id === boxId);
+        if (!box) return;
+
+        this.currentView = 'addItem';
+        this.currentBox = box;
+        this.hideSidebar();
+
+        let html = `
+          <div class="breadcrumb">
+            <a onclick="app.showWorkbench()">Workbench</a> / 
+            <a onclick="app.showBoxItems('${box.id}')">${this.escapeHtml(box.name)}</a>
+          </div>
+          <h2>Add Item to ${this.escapeHtml(box.name)}</h2>
+          <div class="form-container">
+            <div class="form-group">
+              <label for="itemTitle">Title</label>
+              <input type="text" id="itemTitle" placeholder="Item title...">
+            </div>
+            <div class="form-group">
+              <label for="itemContent">Content</label>
+              <textarea id="itemContent" placeholder="Write your content here..."></textarea>
+            </div>
+            <div class="form-buttons">
+              <button onclick="app.submitAddItem('${box.id}')">Add Item</button>
+              <button onclick="app.showBoxItems('${box.id}')">Cancel</button>
+            </div>
+          </div>
+        `;
+        document.getElementById('mainStage').innerHTML = html;
+        document.getElementById('itemTitle').focus();
+      },
+
+      submitAddItem(boxId) {
+        const title = document.getElementById('itemTitle').value.trim();
+        const content = document.getElementById('itemContent').value.trim();
+
+        if (!title) {
+          alert('Please enter an item title');
+          return;
+        }
+
+        const box = this.data.boxes.find(b => b.id === boxId);
+        if (box) {
+          const now = new Date().toISOString();
+          box.items.push({
+            id: this.generateId(),
+            title: title,
+            content: content,
+            createdAt: now,
+            updatedAt: now
+          });
+          this.saveData();
+          this.showBoxItems(boxId);
+        }
+      },
+
+      showEditItemForm(boxId, itemId) {
+        const box = this.data.boxes.find(b => b.id === boxId);
+        if (!box) return;
+        
+        const item = box.items.find(i => i.id === itemId);
+        if (!item) return;
+
+        this.currentView = 'editItem';
+        this.currentBox = box;
+        this.currentItem = item;
+        this.hideSidebar();
+
+        let html = `
+          <div class="breadcrumb">
+            <a onclick="app.showWorkbench()">Workbench</a> / 
+            <a onclick="app.showBoxItems('${box.id}')">${this.escapeHtml(box.name)}</a>
+          </div>
+          <h2>Edit Item</h2>
+          <div class="form-container">
+            <div class="form-group">
+              <label for="itemTitle">Title</label>
+              <input type="text" id="itemTitle" value="${this.escapeHtml(item.title)}">
+            </div>
+            <div class="form-group">
+              <label for="itemContent">Content</label>
+              <textarea id="itemContent">${this.escapeHtml(item.content)}</textarea>
+            </div>
+            <div class="form-buttons">
+              <button onclick="app.submitEditItem('${box.id}', '${item.id}')">Save</button>
+              <button onclick="app.showItem('${box.id}', '${item.id}')">Cancel</button>
+            </div>
+          </div>
+        `;
+        document.getElementById('mainStage').innerHTML = html;
+        document.getElementById('itemTitle').focus();
+      },
+
+      submitEditItem(boxId, itemId) {
+        const title = document.getElementById('itemTitle').value.trim();
+        const content = document.getElementById('itemContent').value.trim();
+
+        if (!title) {
+          alert('Please enter an item title');
+          return;
+        }
+
+        const box = this.data.boxes.find(b => b.id === boxId);
+        if (box) {
+          const item = box.items.find(i => i.id === itemId);
+          if (item) {
+            item.title = title;
+            item.content = content;
+            item.updatedAt = new Date().toISOString();
+            this.saveData();
+            this.showItem(boxId, itemId);
+          }
+        }
+      },
+
+      deleteItem(boxId, itemId) {
+        if (!confirm('Delete this item?')) return;
+
+        const box = this.data.boxes.find(b => b.id === boxId);
+        if (box) {
+          box.items = box.items.filter(i => i.id !== itemId);
+          this.saveData();
+          this.showBoxItems(boxId);
+        }
+      },
+
+      // UI Utilities
+      renderSidebar() {
+        const boxesList = document.getElementById('boxesList');
+        boxesList.innerHTML = this.data.boxes.map(box => `
+          <li class="sidebar-item">
+            <a onclick="app.showBoxItems('${box.id}')">${this.escapeHtml(box.name)}</a>
+            <div style="font-size: 11px; margin-top: 4px;">
+              <a onclick="app.showEditBoxForm('${box.id}')" style="color: #8b6b4a; border: none; margin-right: 8px;">Edit</a>
+              <a onclick="app.deleteBox('${box.id}')" style="color: #d9a0a0; border: none;">Delete</a>
+            </div>
+          </li>
+        `).join('');
+      },
+
+      showSidebar() {
+        document.getElementById('sidebar').classList.add('active');
+        document.getElementById('pageWrapper').classList.add('sidebar-visible');
+      },
+
+      hideSidebar() {
+        document.getElementById('sidebar').classList.remove('active');
+        document.getElementById('pageWrapper').classList.remove('sidebar-visible');
+      },
+
+      getRecentItems(limit) {
+        let all = [];
+        this.data.boxes.forEach(box => {
+          box.items.forEach(item => {
+            all.push({
+              boxId: box.id,
+              id: item.id,
+              title: item.title,
+              content: item.content,
+              updatedAt: item.updatedAt
+            });
+          });
+        });
+        return all.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt)).slice(0, limit);
+      },
+
+      escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+      }
+    };
+
+    // Initialize when DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+      app.init();
     });
   </script>
 </body>
