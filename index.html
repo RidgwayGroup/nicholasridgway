@@ -97,6 +97,11 @@
       margin: 0 auto;
       padding: 60px 32px;
       width: 100%;
+      transition: padding-right 0.3s ease;
+    }
+
+    .page-wrapper.sidebar-visible main {
+      padding-right: 300px;
     }
 
     /* SIDEBAR */
@@ -522,6 +527,7 @@
         e.preventDefault();
         const category = this.dataset.category;
         const sidebar = document.getElementById('sidebar');
+        const pageWrapper = document.querySelector('.page-wrapper');
         const sidebarTitle = document.getElementById('sidebar-title');
         const sidebarContent = document.getElementById('sidebar-content');
 
@@ -568,6 +574,7 @@
             `<li class="sidebar-item"><a href="#">${item}</a></li>`
           ).join('');
           sidebar.classList.add('active');
+          pageWrapper.classList.add('sidebar-visible');
         }
       });
     });
