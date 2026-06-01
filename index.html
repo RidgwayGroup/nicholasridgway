@@ -1,89 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Shed</title>
 
   <style>
     body {
       margin: 0;
-      background: #17120d;
-      color: #e8dcc7;
+      min-height: 100vh;
+      background: #050403 url("images/background.png") center top / cover no-repeat fixed;
+      color: #f3ead8;
       font-family: Georgia, serif;
     }
 
     .page {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 30px;
+      padding: 40px 20px;
+      text-align: center;
     }
 
     header {
-      background: #0d0b08;
-      border: 2px solid #3b2a1a;
-      padding: 25px;
-      margin-bottom: 30px;
+      margin-bottom: 60px;
     }
 
     h1 {
       font-size: 64px;
-      margin: 0;
       letter-spacing: 3px;
+      margin: 0;
     }
 
     .tagline {
-      font-size: 20px;
-      color: #c9b99a;
+      font-size: 22px;
+      color: #d8c6a5;
       margin-top: 10px;
     }
 
     section {
-      background: #24180f;
-      border: 1px solid #4b3420;
-      padding: 25px;
-      margin-bottom: 25px;
+      margin-bottom: 60px;
     }
 
     h2 {
-      margin-top: 0;
-      letter-spacing: 2px;
+      font-size: 42px;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
     }
 
-    .item {
-      background: #d8c7a8;
-      color: #1b130c;
-      padding: 15px;
-      margin: 12px 0;
-      border: 1px solid #8c7555;
+    .workbench-item,
+    .finds,
+    footer {
+      background: rgba(232, 211, 168, 0.9);
+      color: #1b120c;
+      max-width: 600px;
+      margin: 18px auto;
+      padding: 22px;
+      text-align: left;
+      border: 2px solid #5c442d;
     }
 
-    .item h3 {
-      margin: 0 0 5px 0;
+    .workbench-item h3 {
+      margin: 0 0 8px;
+      font-size: 28px;
     }
 
-    .item p {
+    .workbench-item p,
+    .finds p {
       margin: 0;
+      font-size: 20px;
     }
 
     .boxes {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
     .box {
-      background: #3a2617;
-      border: 1px solid #6b4b2e;
-      padding: 20px;
+      background: rgba(118, 78, 39, 0.9);
+      color: #f3ead8;
+      width: 130px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      border: 2px solid #2d1d12;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     footer {
-      color: #9f8f73;
-      font-size: 14px;
-      margin-top: 40px;
       text-align: center;
+      font-size: 18px;
+      background: rgba(10, 8, 5, 0.85);
+      color: #d8c6a5;
     }
   </style>
 </head>
@@ -93,57 +110,60 @@
 
     <header>
       <h1>THE SHED</h1>
-      <div class="tagline">Bits and pieces collected from around the internet and elsewhere.</div>
+      <p class="tagline">Bits and pieces collected from around the internet and elsewhere.</p>
     </header>
 
     <section>
-      <h2>The Workbench</h2>
+      <h2>THE WORKBENCH</h2>
 
-      <div class="item">
-        <h3>Building The Shed</h3>
-        <p>Designing and building this little corner of the internet.</p>
-      </div>
+      <a href="#">
+        <div class="workbench-item">
+          <h3>Building The Shed</h3>
+          <p>Designing and building this little corner of the internet.</p>
+        </div>
+      </a>
 
-      <div class="item">
-        <h3>Learning Logic Pro</h3>
-        <p>Slowly getting to grips with recording and production.</p>
-      </div>
+      <a href="#">
+        <div class="workbench-item">
+          <h3>Learning Logic Pro</h3>
+          <p>Slowly getting to grips with recording and production.</p>
+        </div>
+      </a>
 
-      <div class="item">
-        <h3>CWC Watch Research</h3>
-        <p>Digging into old military watch history and models.</p>
-      </div>
+      <a href="#">
+        <div class="workbench-item">
+          <h3>CWC Watch Research</h3>
+          <p>Digging into old military watch history and models.</p>
+        </div>
+      </a>
     </section>
 
     <section>
-      <h2>Boxes & Drawers</h2>
+      <h2>BOXES &amp; DRAWERS</h2>
 
       <div class="boxes">
-        <div class="box">Records</div>
-        <div class="box">Watches</div>
-        <div class="box">Camping Gear</div>
-        <div class="box">Photographs</div>
-        <div class="box">Projects</div>
-        <div class="box">Miscellaneous</div>
+        <a class="box" href="#">Records</a>
+        <a class="box" href="#">Watches</a>
+        <a class="box" href="#">Camping Gear</a>
+        <a class="box" href="#">Photographs</a>
+        <a class="box" href="#">Projects</a>
+        <a class="box" href="#">Miscellaneous</a>
       </div>
     </section>
 
     <section>
-      <h2>Latest Finds</h2>
+      <h2>LATEST FINDS</h2>
 
-      <div class="item">
-        <h3>Old BB Gun</h3>
-        <p>Something found, remembered, or worth keeping.</p>
-      </div>
-
-      <div class="item">
-        <h3>Radiohead — Weird Fishes</h3>
-        <p>A song that keeps coming back.</p>
+      <div class="finds">
+        <p>Old BB gun</p>
+        <p>Hamilton Khaki Mechanical</p>
+        <p>Photo from a walk in Derbyshire</p>
+        <p>Radiohead — Weird Fishes</p>
       </div>
     </section>
 
     <footer>
-      No ads. No algorithms. No following. Just a shed.
+      It’s not important. It’s just interesting.
     </footer>
 
   </div>
